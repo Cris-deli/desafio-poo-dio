@@ -1,31 +1,18 @@
-public class Curso {
+public class Curso extends Conteudo {
     //Atributos
-    private String titulo;
-
-    private String descricao;
 
     private int cargaHoraria;
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
+    }
 
     // Construtor vazio
     public Curso() {
     }
 
     //gets e sets
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 
     public int getCargaHoraria() {
         return cargaHoraria;
@@ -39,6 +26,7 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "{" + titulo + '\''  +  descricao + '\''  + cargaHoraria +  '}';
+        return "{" + getTitulo() +  ' '  +   getDescricao() + ' ' + " Carga Horaria: " + cargaHoraria +  '}';
+
     }
 }
